@@ -2,8 +2,15 @@
  * Design system styles (Digdir base, Røde Kors theme, components, Source Sans 3)
  * are imported once in layout.tsx. Use --ds-* tokens here, never hardcoded values.
  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background: var(--ds-color-neutral-background-default);
+  min-height: 100dvh;
+  background: var(--ds-color-neutral-background-tinted);
   color: var(--ds-color-neutral-text-default);
 }

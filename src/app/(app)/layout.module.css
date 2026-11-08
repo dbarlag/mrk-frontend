@@ -1,0 +1,4 @@
+/* Leave room for the fixed tab menu (97px in the design). */
+.main {
+  padding-bottom: calc(97px + env(safe-area-inset-bottom));
+}

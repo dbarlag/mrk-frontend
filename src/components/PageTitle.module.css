@@ -1,0 +1,9 @@
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.heading {
+  padding-inline: var(--ds-size-2);
+  font-weight: var(--ds-font-weight-regular);
+}

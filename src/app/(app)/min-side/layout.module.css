@@ -1,0 +1,5 @@
+/* Tabs are wider than the phone screen in the design; let them scroll sideways. */
+.tabsList {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
