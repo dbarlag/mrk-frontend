@@ -62,9 +62,8 @@ export function TimeplanView() {
   );
 
   return (
-    <>
       <Tabs value={tab} onChange={(v) => setTab(v as Tab)} className={styles.controls}>
-          <TabsList>
+          <TabsList className={styles.tabs}>
             <TabsTab value="kommende">
               <TasklistIcon aria-hidden />
               Kommende
@@ -102,27 +101,26 @@ export function TimeplanView() {
             </Suggestion.List>
           </Suggestion>
         </div>
+        {/* Week pager: below the list on mobile, above it on desktop (CSS grid areas). */}
+        <Pagination aria-label="Velg uke" data-size="sm" className={styles.pagination}>
+          <PaginationList>
+            <PaginationItem>
+              <PaginationButton {...prevButtonProps} aria-label="Forrige uke" />
+            </PaginationItem>
+            {pages.map(({ page, itemKey, buttonProps }) => (
+              <PaginationItem key={itemKey}>
+                {typeof page === "number" && (
+                  <PaginationButton {...buttonProps}>{weeks[page - 1]}</PaginationButton>
+                )}
+              </PaginationItem>
+            ))}
+            <PaginationItem>
+              <PaginationButton {...nextButtonProps} aria-label="Neste uke" />
+            </PaginationItem>
+          </PaginationList>
+        </Pagination>
         <TabsPanel value="kommende" className={styles.panel}>{tab === "kommende" && list}</TabsPanel>
         <TabsPanel value="mine" className={styles.panel}>{tab === "mine" && list}</TabsPanel>
-      </Tabs>
-
-      <Pagination aria-label="Velg uke" data-size="sm" className={styles.pagination}>
-        <PaginationList>
-          <PaginationItem>
-            <PaginationButton {...prevButtonProps} aria-label="Forrige uke" />
-          </PaginationItem>
-          {pages.map(({ page, itemKey, buttonProps }) => (
-            <PaginationItem key={itemKey}>
-              {typeof page === "number" && (
-                <PaginationButton {...buttonProps}>{weeks[page - 1]}</PaginationButton>
-              )}
-            </PaginationItem>
-          ))}
-          <PaginationItem>
-            <PaginationButton {...nextButtonProps} aria-label="Neste uke" />
-          </PaginationItem>
-        </PaginationList>
-      </Pagination>
-    </>
+    </Tabs>
   );
 }

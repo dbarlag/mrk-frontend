@@ -67,3 +67,37 @@
   justify-content: flex-end;
   gap: 10px;
 }
+
+/* Desktop (≥851px, the Header's breakpoint). */
+@media (min-width: 851px) {
+  /* In a grid row, keep the footer at the bottom of equal-height cards. */
+  .rows {
+    flex-grow: 1;
+  }
+
+  /* Profile card: avatar left, title and two columns of details right. */
+  .card[data-layout="split"] {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--ds-size-14);
+    row-gap: var(--ds-size-4);
+    align-items: start;
+  }
+
+  .card[data-layout="split"] > :first-child {
+    grid-row: span 2;
+  }
+
+  .card[data-layout="split"] .rows {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    column-gap: var(--ds-size-10);
+  }
+
+  .card[data-layout="split"] .divider,
+  .card[data-layout="split"] .actions {
+    grid-column: 1 / -1;
+  }
+}

@@ -14,3 +14,20 @@ body {
   background: var(--ds-color-neutral-background-tinted);
   color: var(--ds-color-neutral-text-default);
 }
+
+/*
+ * Design system gap: between the Header's desktop breakpoint (851px) and
+ * ~1100px, logos + nav row + user name overflow the viewport. Hide the user
+ * name (the avatar stays) and shrink our wordmark until the Header handles
+ * this itself.
+ */
+@media (min-width: 851px) and (max-width: 1100px) {
+  header [class*="userName"] {
+    display: none;
+  }
+
+  .mrk-wordmark {
+    width: 140px;
+    height: auto;
+  }
+}

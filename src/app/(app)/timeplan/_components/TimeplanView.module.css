@@ -44,7 +44,53 @@
   gap: var(--ds-size-6);
 }
 
+/* Mobile: the pager sits after the list, 16px below it (the page gap). */
 .pagination {
+  order: 1;
   display: flex;
   justify-content: center;
+  margin-top: calc(var(--ds-size-4) - 10px);
+}
+
+/*
+ * Desktop (MRK-Demo layout): tabs left with calendar + filter to the right on
+ * one row, week pager centred above the cards, cards in a two-column grid.
+ */
+@media (min-width: 851px) {
+  .controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "tabs filter"
+      "pager pager"
+      "panel panel";
+    align-items: end;
+    column-gap: var(--ds-size-8);
+    row-gap: var(--ds-size-6);
+  }
+
+  .tabs {
+    grid-area: tabs;
+  }
+
+  .filterRow {
+    grid-area: filter;
+    align-items: center;
+  }
+
+  .pagination {
+    grid-area: pager;
+    margin-top: 0;
+  }
+
+  .panel {
+    grid-area: panel;
+    padding: 0;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 28rem), 1fr));
+    align-items: start;
+  }
 }

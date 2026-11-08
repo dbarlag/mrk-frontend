@@ -21,3 +21,30 @@
   flex: 1;
   min-width: 0;
 }
+
+/*
+ * Desktop: cards in a responsive grid (about 3 per row at full width, as in
+ * MRK-Demo). The section header and filter span the full width.
+ */
+@media (min-width: 851px) {
+  .section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: var(--ds-size-6);
+  }
+
+  .section > :first-child,
+  .section > .filter {
+    grid-column: 1 / -1;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    font-size: var(--ds-font-size-4);
+  }
+
+  .filter {
+    max-width: 30rem;
+  }
+}

@@ -35,6 +35,11 @@ type InfoCardProps = {
   density?: "tight" | "loose";
   /** Buttons for the footer. A divider is drawn above them. */
   actions?: ReactNode;
+  /**
+   * "split" puts `leading` in a left column and the rows in two columns on
+   * desktop (the profile card). Mobile is always stacked.
+   */
+  layout?: "stacked" | "split";
 };
 
 const statusColor: Record<Status, "success" | "info" | "warning"> = {
@@ -56,9 +61,10 @@ export function InfoCard({
   rows,
   density = "loose",
   actions,
+  layout = "stacked",
 }: InfoCardProps) {
   return (
-    <Card className={styles.card} data-color="neutral">
+    <Card className={styles.card} data-color="neutral" data-layout={layout}>
       {leading}
       {(title || status) && (
         <div className={styles.top}>
@@ -97,7 +103,7 @@ export function InfoCard({
       </dl>
       {actions && (
         <>
-          <Divider />
+          <Divider className={styles.divider} />
           {/* Card text is neutral; actions use the brand colour. */}
           <div className={styles.actions} data-color="primary-color-red">
             {actions}

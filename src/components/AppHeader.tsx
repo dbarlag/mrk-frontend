@@ -18,7 +18,6 @@ const navItems = [
   { label: "Min side", href: "/min-side" },
   { label: "Nyttig", href: "/#nyttig" },
   { label: "Læring", href: "/min-side/kompetanse" },
-  { label: "Bli frivillig", href: "/registrer" },
 ];
 
 // "Mitt Røde Kors" wordmark. On mobile the Header hides the Red Cross logo
@@ -26,7 +25,7 @@ const navItems = [
 const logo = (
   <Link href="/">
     {/* eslint-disable-next-line @next/next/no-img-element -- SVG wordmark at its native size */}
-    <img src="/brand/mitt-rode-kors.svg" alt="Mitt Røde Kors" width={190} height={64} />
+    <img src="/brand/mitt-rode-kors.svg" alt="Mitt Røde Kors" width={190} height={64} className="mrk-wordmark" />
   </Link>
 );
 

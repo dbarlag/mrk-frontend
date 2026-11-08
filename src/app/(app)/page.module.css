@@ -42,3 +42,32 @@
 .welcomeTitle {
   font-weight: var(--ds-font-weight-bold);
 }
+
+/* "Gi tilbakemelding" is a desktop-only action. */
+.feedback {
+  display: none;
+}
+
+/* Desktop (≥851px, the Header's breakpoint): MRK-Demo layout. */
+@media (min-width: 851px) {
+  .greeting {
+    font-size: var(--ds-font-size-9);
+    margin-top: 0;
+  }
+
+  .feedback {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .shortcuts,
+  .stack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--ds-size-6);
+  }
+
+  .section {
+    scroll-margin-top: var(--ds-size-6);
+  }
+}

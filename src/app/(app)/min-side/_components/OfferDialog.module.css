@@ -72,3 +72,11 @@
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/* Desktop: a little more room than the phone-sized popup. */
+@media (min-width: 851px) {
+  .dialog {
+    width: min(30rem, calc(100vw - 2 * var(--ds-size-8)));
+    padding: var(--ds-size-8);
+  }
+}

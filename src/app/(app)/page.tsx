@@ -1,10 +1,11 @@
 import {
   CalendarIcon,
+  ExternalLinkIcon,
   HatSchoolIcon,
   MegaphoneSpeakingIcon,
   PersonIcon,
 } from "@navikt/aksel-icons";
-import { Heading, Paragraph } from "@norwegianredcross/designsystem";
+import { Button, Heading, Paragraph } from "@norwegianredcross/designsystem";
 import { SectionHeader } from "@/components/SectionHeader";
 import pageStyles from "@/components/Page.module.css";
 import { ContentCard } from "./_home/ContentCard";
@@ -91,6 +92,15 @@ export default function Home() {
           Har du lyst til å hjelpe oss med å forbedre Mitt Røde Kors? Gi oss
           gjerne en tilbakemelding om hva du synes om tjenesten.
         </Paragraph>
+        {/* Desktop only, as in the MRK-Demo desktop layout. TODO: real feedback URL. */}
+        <div className={styles.feedback}>
+          <Button asChild variant="secondary" data-color="primary-color-red">
+            <a href="#" target="_blank" rel="noreferrer">
+              Gi tilbakemelding
+              <ExternalLinkIcon aria-hidden />
+            </a>
+          </Button>
+        </div>
       </section>
 
       <nav aria-label="Snarveier" className={styles.shortcuts}>
@@ -99,7 +109,7 @@ export default function Home() {
         ))}
       </nav>
 
-      <section className={styles.section}>
+      <section id="nyttig" className={styles.section}>
         <SectionHeader>Nytting</SectionHeader>
         <div className={styles.stack}>
           {articles.map(({ id, ...article }) => (

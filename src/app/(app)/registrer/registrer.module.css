@@ -57,3 +57,23 @@
 .submit {
   align-self: center;
 }
+
+/* Desktop (≥851px, the Header's breakpoint): a centred white panel on the
+   tinted page, matching the card style of the other desktop pages. */
+@media (min-width: 851px) {
+  .page {
+    padding: var(--ds-size-12) var(--ds-size-8);
+    background: none;
+  }
+
+  .tab {
+    display: none;
+  }
+
+  .panel {
+    padding: var(--ds-size-10);
+    background: var(--ds-color-neutral-background-default);
+    border: 1px solid var(--ds-color-neutral-border-subtle);
+    border-radius: var(--ds-border-radius-xl);
+  }
+}

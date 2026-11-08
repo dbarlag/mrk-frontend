@@ -25,6 +25,7 @@ export default function ProfilPage() {
         headingLevel={2}
         title={profile.name}
         density="tight"
+        layout="split"
         leading={
           <Avatar
             aria-hidden
