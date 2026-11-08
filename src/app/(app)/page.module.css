@@ -1,0 +1,44 @@
+.greeting {
+  padding: 10px;
+  margin-top: var(--ds-size-4);
+  font-weight: var(--ds-font-weight-regular);
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  padding: var(--ds-size-6);
+}
+
+.welcome > p {
+  margin: 0;
+}
+
+.welcome > p + p {
+  margin-top: calc(-1 * var(--ds-size-2));
+}
+
+.shortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  padding-block: var(--ds-size-6);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  padding-block: var(--ds-size-4);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+
+.welcomeTitle {
+  font-weight: var(--ds-font-weight-bold);
+}

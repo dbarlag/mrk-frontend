@@ -1,0 +1,29 @@
+.card {
+  overflow: hidden;
+}
+
+.media {
+  padding: 0;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+
+.title {
+  font-weight: var(--ds-font-weight-regular);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}

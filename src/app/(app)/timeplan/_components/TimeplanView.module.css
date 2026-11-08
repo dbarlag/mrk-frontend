@@ -1,0 +1,50 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filterRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.suggestion {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Filter chips are coloured by event type, like the type tags on the cards. */
+.suggestion > data[value="arrangement"] {
+  --dsc-suggestion-chip-background: var(--ds-color-info-surface-tinted);
+  --dsc-suggestion-chip-background--hover: var(--ds-color-info-surface-hover);
+  --dsc-suggestion-chip-color: var(--ds-color-neutral-text-default);
+}
+
+.suggestion > data[value="kurs"] {
+  --dsc-suggestion-chip-background: var(--ds-color-success-surface-tinted);
+  --dsc-suggestion-chip-background--hover: var(--ds-color-success-surface-hover);
+  --dsc-suggestion-chip-color: var(--ds-color-neutral-text-default);
+}
+
+.suggestion > data[value="vakt"] {
+  --dsc-suggestion-chip-background: var(--ds-color-primary-color-red-surface-tinted);
+  --dsc-suggestion-chip-background--hover: var(--ds-color-primary-color-red-surface-hover);
+  --dsc-suggestion-chip-color: var(--ds-color-neutral-text-default);
+}
+
+.panel {
+  padding: var(--ds-size-4) 0 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}

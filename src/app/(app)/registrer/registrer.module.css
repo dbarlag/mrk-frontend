@@ -1,0 +1,59 @@
+/* White page with a tinted panel; the small tinted "tab" at the top right
+   recreates the curved section header from the design. */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--ds-size-4) var(--ds-size-4) var(--ds-size-6);
+  background: var(--ds-color-neutral-background-default);
+}
+
+.tab {
+  align-self: flex-end;
+  width: var(--ds-size-6);
+  height: 28px;
+  background: var(--ds-color-neutral-background-tinted);
+  border-radius: 32px 32px 0 0;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-6);
+  width: 100%;
+  max-width: 40rem;
+  margin-inline: auto;
+  padding: var(--ds-size-4) var(--ds-size-4) var(--ds-size-8);
+  background: var(--ds-color-neutral-background-tinted);
+  border-radius: 32px 0 32px 32px;
+  color: var(--ds-color-primary-color-red-text-default);
+}
+
+.heading {
+  font-weight: var(--ds-font-weight-bold);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+
+.intro p {
+  font-weight: var(--ds-font-weight-medium);
+}
+
+.intro .steps {
+  font-weight: var(--ds-font-weight-bold);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+  color: var(--ds-color-neutral-text-default);
+}
+
+.submit {
+  align-self: center;
+}

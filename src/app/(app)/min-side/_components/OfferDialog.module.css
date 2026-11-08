@@ -1,0 +1,74 @@
+.dialog {
+  width: min(358px, calc(100vw - 2 * var(--ds-size-4)));
+  padding: var(--ds-size-6) var(--ds-size-4);
+  border: 1px solid var(--ds-color-neutral-border-subtle);
+  border-radius: var(--ds-border-radius-xl);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-4);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  flex: 1;
+  font-weight: var(--ds-font-weight-bold);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  flex-shrink: 0;
+  width: var(--ds-size-6);
+  height: var(--ds-size-6);
+}
+
+.label {
+  font-weight: var(--ds-font-weight-semibold);
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-2);
+}
+
+.amount {
+  padding-inline-start: var(--ds-size-4);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ds-size-1);
+}
+
+.contact > :first-child {
+  margin-block-end: 6px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

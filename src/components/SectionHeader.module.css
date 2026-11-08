@@ -10,3 +10,8 @@
   justify-content: space-between;
   gap: var(--ds-size-2);
 }
+
+/* Figma: typography/heading/sm Bold */
+.heading {
+  font-weight: var(--ds-font-weight-bold);
+}
