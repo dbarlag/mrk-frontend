@@ -1,4 +1,8 @@
-/* Shared mobile-first page body: 16px gutters, sections stacked with 16px gaps. */
+/*
+ * Shared page body. Mobile: 16px gutters, sections stacked with 16px gaps.
+ * Desktop (≥851px, the Header's breakpoint): centred ~1200px column as in
+ * the MRK-Demo desktop layout.
+ */
 .body {
   display: flex;
   flex-direction: column;
@@ -7,4 +11,12 @@
   max-width: 40rem;
   margin-inline: auto;
   padding: var(--ds-size-4);
+}
+
+@media (min-width: 851px) {
+  .body {
+    max-width: 75rem;
+    gap: var(--ds-size-6);
+    padding: var(--ds-size-10) var(--ds-size-8);
+  }
 }

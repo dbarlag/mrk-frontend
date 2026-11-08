@@ -32,3 +32,11 @@
 .item[aria-current="page"] {
   color: var(--ds-color-primary-color-red-text-default);
 }
+
+/* Desktop: the Header's navigation row replaces the bottom tab menu.
+   851px matches the Header's own desktop breakpoint. */
+@media (min-width: 851px) {
+  .menu {
+    display: none;
+  }
+}

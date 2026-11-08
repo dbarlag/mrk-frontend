@@ -2,3 +2,10 @@
 .main {
   padding-bottom: calc(97px + env(safe-area-inset-bottom));
 }
+
+/* Desktop: no bottom tab menu. */
+@media (min-width: 851px) {
+  .main {
+    padding-bottom: var(--ds-size-12);
+  }
+}

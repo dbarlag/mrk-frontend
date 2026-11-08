@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronLeftIcon } from "@navikt/aksel-icons";
+import { ArrowLeftIcon, ChevronLeftIcon } from "@navikt/aksel-icons";
 import { Button, Heading } from "@norwegianredcross/designsystem";
 import styles from "./PageTitle.module.css";
 
@@ -9,14 +9,24 @@ type PageTitleProps = {
   backHref?: string;
 };
 
-/** Sub-page title with an optional back button ("< Min timeplan"). */
+/**
+ * Sub-page title with an optional back button.
+ * Mobile: "< Min timeplan" on one row. Desktop: "← Tilbake" above a large heading.
+ */
 export function PageTitle({ children, backHref }: PageTitleProps) {
   return (
     <div className={styles.title}>
       {backHref && (
-        <Button asChild icon variant="tertiary" data-color="neutral">
-          <Link href={backHref} aria-label="Tilbake">
-            <ChevronLeftIcon aria-hidden fontSize="1.75rem" />
+        <Button
+          asChild
+          variant="tertiary"
+          data-color="neutral"
+          className={styles.back}
+        >
+          <Link href={backHref}>
+            <ChevronLeftIcon aria-hidden fontSize="1.75rem" className={styles.mobileIcon} />
+            <ArrowLeftIcon aria-hidden className={styles.desktopIcon} />
+            <span className={styles.backLabel}>Tilbake</span>
           </Link>
         </Button>
       )}
