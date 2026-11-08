@@ -31,3 +31,17 @@ body {
     height: auto;
   }
 }
+
+/*
+ * Desktop primary buttons use the dark rust from Figma ("Legge til",
+ * node 427:9534): secondary-color-rust/base-hover as the fill, one step
+ * darker (base-active) on hover and press. Tokens, so dark mode follows.
+ */
+@media (min-width: 851px) {
+  .ds-button:not([data-variant="secondary"]):not([data-variant="tertiary"]) {
+    --dsc-button-background: var(--ds-color-secondary-color-rust-base-hover);
+    --dsc-button-background--hover: var(--ds-color-secondary-color-rust-base-active);
+    --dsc-button-background--active: var(--ds-color-secondary-color-rust-base-active);
+    --dsc-button-color: var(--ds-color-secondary-color-rust-base-contrast-default);
+  }
+}
